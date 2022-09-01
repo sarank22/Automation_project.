@@ -52,12 +52,8 @@ aws s3 \
 cp /tmp/sarankumar-httpd-logs-01212021-111010.tar \
 s3://upgrad-sarankumar/sarankumar-httpd-logs-01212021-111010.tar
 
-#Update inventory file with archive:
-
-echo "To create inventory file "
-
-psize=$(ls -lh /tmp/sarankumar-httpd-logs-01212021-101010.tar  | awk '{ print $5}')
-$psize  >> /Automation_Project/inventory.html
+#Update Inventory file
+sudo echo "httpd-logs&nbsp;&nbsp;&nbsp;&nbsp;$timestamp&nbsp;&nbsp;&nbsp;&nbsp;nbsp;tar&nbsp;nbsp;nbsp;nbsp;$size Bytes" >> inventory.html
 
 
 #creating a cron job
